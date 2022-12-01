@@ -11,7 +11,7 @@
 <body>
    <carrousel x-data="{}">
     <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
-    <div class="carrousel_parent-ecrans">
+    <div class="carrousel_parent-ecrans" x-ref="parent">
         <div id="ecran-1" class="carrousel_ecran">
             <figure>
                 <img src="https://picsum.photos/seed/1/500/300" alt="image ecran 1">
@@ -70,7 +70,7 @@ img {
     display: flex; /* aligne horizontalement les enfants */
     width: 100%; /* largeur du parent */
     overflow-x: scroll; /* permet de scroller horizontalement */
-    animation: linear; /* animation de défilement */
+    scroll-behavior: smooth; /* animation de défilement */
     scroll-snap-type: x mandatory;
 }
 .carrousel_ecran {
