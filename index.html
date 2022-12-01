@@ -44,16 +44,16 @@
         </div>
     </div>
     <ul class="caroussel_liste-liens">
-        <li><a href="#ecran-1" class="caroussel_lien">ecran 1</a></li>
-        <li><a href="#ecran-2" class="caroussel_lien">ecran 2</a></li>
+        <li><button class="carrousel_bouton" aria-label="aller à l'écran 1"></button><a href="#ecran-1" class="caroussel_lien">ecran 1</a></button></li>
+        <li><button class="carrousel_bouton" aria-label="aller à l'écran 2"><a href="#ecran-2" class="caroussel_lien">ecran 2</a></button></li>
         <li><a href="#ecran-3" class="caroussel_lien">ecran 3</a></li>
         <li><a href="#ecran-4" class="caroussel_lien">ecran 4</a></li>
         <li><a href="#ecran-5" class="caroussel_lien">ecran 5</a></li>
     </ul>
    </carrousel>
    <ul class="carroussel_liste-boutons">
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 1">ecran 1</button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 2">ecran 2</button></li>
+        <li><button class="carrousel_bouton" aria-label="aller à l'écran 1"><a href="#ecran-1" class="caroussel_lien"></a>ecran 1</button></li>
+        <li><button class="carrousel_bouton" aria-label="aller à l'écran 2"><a href="#ecran-2" class="caroussel_lien"></a>ecran 2</button></li>
         <li><button class="carrousel_bouton" aria-label="aller à l'écran 3">ecran 3</button></li>
         <li><button class="carrousel_bouton" aria-label="aller à l'écran 4">ecran 4</button></li>
         <li><button class="carrousel_bouton" aria-label="aller à l'écran 5">ecran 5</button></li>
@@ -61,3 +61,34 @@
 
 </body>
 </html>
+
+<style>
+
+* {
+    box-sizing: border-box; /* change le box model */
+
+}
+img {
+    max-width: 100%;/* image responsive, largeur maxi */
+    height: auto;/* hauteur "auto" */
+  
+  
+}
+.carrousel_parent-ecrans {
+    display: flex; /* aligne horizontalement les enfants */
+    width: 100%; /* largeur du parent */
+    overflow-x: scroll; /* permet de scroller horizontalement */
+    animation: both;/* animation de défilement */
+    scroll-snap-type: x mandatory;
+}
+.carrousel_ecran {
+    width: 100%;/* largeur du parent pour chaque enfant */
+  flex: none;/* permet de garder toute la largeur du parent */
+  scroll-snap-align: start;
+}
+
+.carrousel_ecran figure {
+    margin: 0 20px 0 20px;/* enlève les marges par défaut */
+}
+
+</style>
