@@ -51,14 +51,6 @@
         <li><button class="carrousel_bouton" aria-label="aller à l'écran 5"><a href="#ecran-5" class="caroussel_lien">ecran 5</a></button></li>
     </ul>
    </carrousel>
-   <ul class="carroussel_liste-boutons">
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 1">ecran 1</button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 2">ecran 2</button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 3">ecran 3</button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 4">ecran 4</button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 5">ecran 5</button></li>
-   </ul>
-
 </body>
 </html>
 
@@ -91,8 +83,19 @@ img {
     margin: 0 20px 0 20px;/* enlève les marges par défaut */
 }
 
-.carrousel_bouton {
+.caroussel_liste-liens {
+    display: flex; 
+    gap: 20px;
+    list-style: none;
+}
 
+.caroussel_liste-liens :hover{
+    background-color: rgb(109, 106, 106);
+}
+
+.caroussel_lien {
+    text-decoration: none;
+    color: black;
 }
 
 .carrousel {
@@ -114,10 +117,12 @@ img {
 }
 
 .carrousel_btn-avant {
-  left: 0;
+  left: 20px;
+  top: 170px;
 }
 
 .carrousel_btn-apres {
-  right: 0;
+  right: 20px;
+  top: 170px;
 }
 </style>
