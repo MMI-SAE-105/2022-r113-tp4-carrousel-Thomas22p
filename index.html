@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,124 +9,147 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 
 </head>
+
 <body>
-   <carrousel x-data="{}">
-    <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
-    <div class="carrousel_parent-ecrans" x-ref="parent">
-        <div id="ecran-1" class="carrousel_ecran">
-            <figure>
-                <img src="https://picsum.photos/seed/1/500/300" alt="image ecran 1">
-                <figcaption>Ecran 1</figcaption>
-            </figure>
-        </div>
-        <div id="ecran-2" class="carrousel_ecran">
-            <figure>
-                <img src="https://picsum.photos/seed/2/500/300" alt="image ecran 2">
-                <figcaption>Ecran 2</figcaption>
-            </figure>
-        </div>
-        <div id="ecran-3" class="carrousel_ecran">
-            <figure>
-                <img src="https://picsum.photos/seed/3/500/300" alt="image ecran 3">
-                <figcaption>Ecran 3</figcaption>
-            </figure>
-        </div>
-        <div id="ecran-4" class="carrousel_ecran">
-            <figure>
-                <img src="https://picsum.photos/seed/4/500/300" alt="image ecran 4">
-                <figcaption>Ecran 4</figcaption>
-            </figure>
-        </div>
-        <div id="ecran-5" class="carrousel_ecran">
-            <figure>
-                <img src="https://picsum.photos/seed/5/500/300" alt="image ecran 5">
-                <figcaption>Ecran 5</figcaption>
-            </figure>
-        </div>
-    </div>
-    <ul class="caroussel_liste-liens">
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 1"><a href="#ecran-1" class="caroussel_lien">ecran 1</a></button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 2"><a href="#ecran-2" class="caroussel_lien">ecran 2</a></button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 3"><a href="#ecran-3" class="caroussel_lien">ecran 3</a></button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 4"><a href="#ecran-4" class="caroussel_lien">ecran 4</a></button></li>
-        <li><button class="carrousel_bouton" aria-label="aller à l'écran 5"><a href="#ecran-5" class="caroussel_lien">ecran 5</a></button></li>
-    </ul>
-   </carrousel>
+    <carrousel x-data="{}">
+        <button @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth" class="carrousel_btn carrousel_btn-avant"
+            aria-label="slide précedant">
+            <</button><button @click="$refs.parent.scrollLeft += $refs.parent.clientWidth" class=" carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
+                <div class="carrousel_parent-ecrans" x-ref="parent">
+                    <div id="ecran-1" class="carrousel_ecran">
+                        <figure>
+                            <img src="https://picsum.photos/seed/1/500/300" alt="image ecran 1">
+                            <figcaption>Ecran 1</figcaption>
+                        </figure>
+                    </div>
+                    <div id="ecran-2" class="carrousel_ecran">
+                        <figure>
+                            <img src="https://picsum.photos/seed/2/500/300" alt="image ecran 2">
+                            <figcaption>Ecran 2</figcaption>
+                        </figure>
+                    </div>
+                    <div id="ecran-3" class="carrousel_ecran">
+                        <figure>
+                            <img src="https://picsum.photos/seed/3/500/300" alt="image ecran 3">
+                            <figcaption>Ecran 3</figcaption>
+                        </figure>
+                    </div>
+                    <div id="ecran-4" class="carrousel_ecran">
+                        <figure>
+                            <img src="https://picsum.photos/seed/4/500/300" alt="image ecran 4">
+                            <figcaption>Ecran 4</figcaption>
+                        </figure>
+                    </div>
+                    <div id="ecran-5" class="carrousel_ecran">
+                        <figure>
+                            <img src="https://picsum.photos/seed/5/500/300" alt="image ecran 5">
+                            <figcaption>Ecran 5</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <ul class="caroussel_liste-liens">
+                    <li><button class="carrousel_bouton" aria-label="aller à l'écran 1"><a href="#ecran-1"
+                                class="caroussel_lien">ecran 1</a></button></li>
+                    <li><button class="carrousel_bouton" aria-label="aller à l'écran 2"><a href="#ecran-2"
+                                class="caroussel_lien">ecran 2</a></button></li>
+                    <li><button class="carrousel_bouton" aria-label="aller à l'écran 3"><a href="#ecran-3"
+                                class="caroussel_lien">ecran 3</a></button></li>
+                    <li><button class="carrousel_bouton" aria-label="aller à l'écran 4"><a href="#ecran-4"
+                                class="caroussel_lien">ecran 4</a></button></li>
+                    <li><button class="carrousel_bouton" aria-label="aller à l'écran 5"><a href="#ecran-5"
+                                class="caroussel_lien">ecran 5</a></button></li>
+                </ul>
+    </carrousel>
 </body>
+
 </html>
 
 <style>
+    * {
+        box-sizing: border-box;
+        /* change le box model */
 
-* {
-    box-sizing: border-box; /* change le box model */
+    }
 
-}
-img {
-    max-width: 100%;/* image responsive, largeur maxi */
-    height: auto;/* hauteur "auto" */
-  
-  
-}
-.carrousel_parent-ecrans {
-    display: flex; /* aligne horizontalement les enfants */
-    width: 100%; /* largeur du parent */
-    overflow-x: scroll; /* permet de scroller horizontalement */
-    scroll-behavior: smooth; /* animation de défilement */
-    scroll-snap-type: x mandatory;
-}
-.carrousel_ecran {
-    width: 100%;/* largeur du parent pour chaque enfant */
-    flex: none;/* permet de garder toute la largeur du parent */
-    scroll-snap-align: start;
-}
+    img {
+        max-width: 100%;
+        /* image responsive, largeur maxi */
+        height: auto;
+        /* hauteur "auto" */
 
-.carrousel_ecran figure {
-    margin: 0 20px 0 20px;/* enlève les marges par défaut */
-}
 
-.caroussel_liste-liens {
-    display: flex;
-    justify-content: center;
-    border-radius: 16px; 
-    gap: 40px;
-    list-style: none;
-}
+    }
 
-.caroussel_liste-liens :hover{
-    background-color: rgb(109, 106, 106);
-    border-radius: 2px;
-}
+    .carrousel_parent-ecrans {
+        display: flex;
+        /* aligne horizontalement les enfants */
+        width: 100%;
+        /* largeur du parent */
+        overflow-x: scroll;
+        /* permet de scroller horizontalement */
+        scroll-behavior: smooth;
+        /* animation de défilement */
+        scroll-snap-type: x mandatory;
+    }
 
-.caroussel_lien {
-    text-decoration: none;
-    color: black;
-}
+    .carrousel_ecran {
+        width: 100%;
+        /* largeur du parent pour chaque enfant */
+        flex: none;
+        /* permet de garder toute la largeur du parent */
+        scroll-snap-align: start;
+    }
 
-.carrousel {
-  position: relative;
-}
+    .carrousel_ecran figure {
+        margin: 0 20px 0 20px;
+        /* enlève les marges par défaut */
+    }
 
-.carrousel_btn {
-  position: absolute;
-  top: 50%; /* centre verticalement */
-  transform: translateY(-50%); /* methode du point nort */
-  width: 2rem;
-  height: 2rem;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  border: none;
-  display: grid;
-  place-content: center;
-  color: #fff;
-}
+    .caroussel_liste-liens {
+        display: flex;
+        justify-content: center;
+        border-radius: 16px;
+        gap: 40px;
+        list-style: none;
+    }
 
-.carrousel_btn-avant {
-  left: 20px;
-  top: 170px;
-}
+    .caroussel_liste-liens :hover {
+        background-color: rgb(109, 106, 106);
+        border-radius: 2px;
+    }
 
-.carrousel_btn-apres {
-  right: 20px;
-  top: 170px;
-}
+    .caroussel_lien {
+        text-decoration: none;
+        color: black;
+    }
+
+    .carrousel {
+        position: relative;
+    }
+
+    .carrousel_btn {
+        position: absolute;
+        top: 50%;
+        /* centre verticalement */
+        transform: translateY(-50%);
+        /* methode du point nort */
+        width: 2rem;
+        height: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        border: none;
+        display: grid;
+        place-content: center;
+        color: #fff;
+    }
+
+    .carrousel_btn-avant {
+        left: 20px;
+        top: 170px;
+    }
+
+    .carrousel_btn-apres {
+        right: 20px;
+        top: 170px;
+    }
 </style>
